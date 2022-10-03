@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 2px;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+}
+
+section:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#library {
+    border-right: 4px solid black;
+    background: lightblue url(media/images/librarian.png) no-repeat left center;
+}
+
+#member {
+    background: lightblue url(media/images/member.png) no-repeat center;
+}
+
+.btn {
+    padding: 10px 200px;
+    position: absolute !important;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.black {
+    width: 100%;
+    height: 100%;
+    background-color: coral;
+    opacity: 0;
+}
+
+.black:hover {
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+    #library {
+        border-right: none;
+        border-bottom: 4px solid black;
+    }
+
+    section {
+        height: 50vh;
+    }
+}
