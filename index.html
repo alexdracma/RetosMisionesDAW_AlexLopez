@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--BOOTSTRAP 5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="module" src="js/index.js" defer></script>
+
+    <title>Biblioteca</title>
+    <style>
+        .vertical-nav {
+            min-width: 17rem;
+            width: 17rem;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+        }
+
+        .page-content {
+            width: calc(100% - 17rem);
+            margin-left: 17rem;
+            transition: all 0.4s;
+        }
+
+        /* for toggle behavior */
+
+        #sidebar.active {
+            margin-left: -17rem;
+        }
+
+        #content.active {
+            width: 100%;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                margin-left: -17rem;
+            }
+
+            #sidebar.active {
+                margin-left: 0;
+            }
+
+            #content {
+                width: 100%;
+                margin: 0;
+            }
+
+            #content.active {
+                margin-left: 17rem;
+                width: calc(100% - 17rem);
+            }
+        }
+
+        body {
+            background: #599fd9;
+            background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+            background: linear-gradient(to right, #599fd9, #c2e59c);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #actions {
+            display: none;
+        }
+
+        .avisando {
+            height: 60px;
+        }
+
+        .error {
+            background-color: rgb(255, 155, 155);
+            box-shadow: 5px 3px rgb(240, 113, 113);
+        }
+
+        .success {
+            background-color: rgb(137, 231, 150);
+            box-shadow: 5px 3px rgb(94, 221, 111);
+        }
+
+        .avisando p {
+            margin-top: 10px;
+            margin-left: 4px;
+        }
+
+        table .form-control {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Vertical navbar -->
+    <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+            <h3>La biblioteca de caravane</h3>
+        </div>
+
+        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menú</p>
+
+        <ul class="nav flex-column bg-white mb-0" id="links">
+            <li class="nav-item">
+                <a href="javascript:" class="nav-link text-dark font-italic">Bibliotecas</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:" class="nav-link text-dark font-italic">Libros</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:" class="nav-link text-dark font-italic">Socios</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- Contenido -->
+    <div class="page-content p-4">
+        <div class="p-2" id="divAvisos"></div>
+    </div>
+
+    <div class="page-content p-5" id="content">
+
+        <!-- Botones de acción -->
+
+        <div class="m-auto" style="width: fit-content;" id="actionButtons"></div>
+
+        <div class="row justify-content-center">
+            <div class="p-4 col-xl-6" id="table"></div>
+            <div class="p-4 col-xl-6" id="actions"></div>
+        </div>
+    </div>
+</body>
+
+</html>
